@@ -14,7 +14,7 @@ ___
 var filename = 'electron-v' + version + '-' + platform + '-' + arch + (symbols ? '-symbols' : '') + '.zip';
 var url = process.env.ELECTRON_MIRROR || opts.mirror || 'https://github.com/atom/electron/releases/download/v';
 url += version + '/electron-v' + version + '-' + platform + '-' + arch + (symbols ? '-symbols' : '') + '.zip';
-'''
+```
 https://api.github.com/repos/atom/electron/releases <br/>
 https://api.github.com/repos/mafintosh/electron-prebuilt/releases <br/>
 ___
@@ -25,7 +25,7 @@ ___
 ###### make a tar archive with node/js
 https://github.com/mafintosh/tar-fs <br/>
 ```javascript
-          var archive = require("../lib/archive-zip"); <br/>
-          console.log(appPath + ".zip"); <br/>
-          return archive(appPath, appPath + ".zip"); <br/>
+var archive = require("../lib/archive-zip"); <br/>
+console.log(appPath + ".zip"); <br/>
+return archive(appPath, appPath + ".zip"); <br/>
 ```
