@@ -23,6 +23,7 @@ https://github.com/atom/electron/blob/master/docs/api/dialog.md <br/>
 http://www.mylifeforthecode.com/getting-started-with-standard-dialogs-in-electron/ <br/>
 ___
 ###### make a tar archive with node/js
+https://github.com/mafintosh/tar-fs <br/>
 <code>
 var archive = require("../lib/archive-zip");<br/>
 console.log(appPath + ".zip");<br/>
