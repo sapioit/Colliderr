@@ -22,3 +22,8 @@ ___
 ###### find how to get the user navigate to and choose a folder (to be packed)
 https://github.com/atom/electron/blob/master/docs/api/dialog.md <br/>
 http://www.mylifeforthecode.com/getting-started-with-standard-dialogs-in-electron/ <br>
+<code>
+var archive = require("../lib/archive-zip");<br/>
+console.log(appPath + ".zip");<br/>
+return archive(appPath, appPath + ".zip");
+</code>
