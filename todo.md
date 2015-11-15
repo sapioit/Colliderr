@@ -25,6 +25,19 @@ ___
 ###### make a tar archive with node/js
 https://github.com/mafintosh/tar-fs <br/>
 ```javascript
+var tar = require('lib/tar-fs')
+var fs = require('fs')
+
+// packing a directory
+tar.pack('./my-directory').pipe(fs.createWriteStream('my-tarball.tar'))
+
+// extracting a directory
+fs.createReadStream('my-other-tarball.tar').pipe(tar.extract('./my-other-directory'))
+
+//Copying a directory with permissions and mtime intact is as simple as
+tar.pack('source-directory').pipe(tar.extract('dest-directory'))
+```
+```javascript
 var archive = require("../lib/archive-zip"); <br/>
 console.log(appPath + ".zip"); <br/>
 return archive(appPath, appPath + ".zip"); <br/>
