@@ -10,11 +10,11 @@
 # Solved
 ___
 ###### get the list of versions be up to date, no matter when a new version pops up....
-<code>
-     var filename = 'electron-v' + version + '-' + platform + '-' + arch + (symbols ? '-symbols' : '') + '.zip'
-       var url = process.env.ELECTRON_MIRROR || opts.mirror || 'https://github.com/atom/electron/releases/download/v'
-       url += version + '/electron-v' + version + '-' + platform + '-' + arch + (symbols ? '-symbols' : '') + '.zip'
-</code> <br/>
+```javascript
+var filename = 'electron-v' + version + '-' + platform + '-' + arch + (symbols ? '-symbols' : '') + '.zip';
+var url = process.env.ELECTRON_MIRROR || opts.mirror || 'https://github.com/atom/electron/releases/download/v';
+url += version + '/electron-v' + version + '-' + platform + '-' + arch + (symbols ? '-symbols' : '') + '.zip';
+'''
 https://api.github.com/repos/atom/electron/releases <br/>
 https://api.github.com/repos/mafintosh/electron-prebuilt/releases <br/>
 ___
@@ -24,8 +24,8 @@ http://www.mylifeforthecode.com/getting-started-with-standard-dialogs-in-electro
 ___
 ###### make a tar archive with node/js
 https://github.com/mafintosh/tar-fs <br/>
-<code>
-var archive = require("../lib/archive-zip");<br/>
-console.log(appPath + ".zip");<br/>
-return archive(appPath, appPath + ".zip");
-</code>
+```javascript
+          var archive = require("../lib/archive-zip"); <br/>
+          console.log(appPath + ".zip"); <br/>
+          return archive(appPath, appPath + ".zip"); <br/>
+```
