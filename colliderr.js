@@ -1,40 +1,14 @@
-window.onfocus = function() {
-  console.log("focus");
-  focusTitlebars(true);
-}
-
-window.onblur = function() {
-  console.log("blur");
-  focusTitlebars(false);
-}
-
-window.onresize = function() {
-  updateContentStyle();
-}
+var remote = require('remote');
+var BrowserWindow = remote.require('browser-window');
+var win = BrowserWindow.getFocusedWindow();
 
 
-function toggleFullScreen(){
-  win.setFullScreen(!(win.isFullScreen()));
-}
-function toggleMaximized(){
-  win.isMaximized() ? win.unmaximize() : win.maximize();
-}
-function closeWindow() {
-  win.close();
-}
-function minimize(){
-  win.minimize();
-}
+
 
 window.onload = function() {
 
-
-  var remote = require('remote');
-  var BrowserWindow = remote.require('browser-window');
-  var win = BrowserWindow.getFocusedWindow();
-
   document.getElementById("close-window-button").onclick = function() {
-    closeWindow();
+    win.close();
   }
   document.getElementById("minimize-window-button").onclick = function() {
     win.minimize();
@@ -46,43 +20,41 @@ window.onload = function() {
     win.unmaximize();
   }
   document.getElementById("toggle-window-button").onclick = function() {
-    toggleFullScreen();
+    win.setFullScreen(!(win.isFullScreen()));
   }
   document.getElementById("maxmin-window-button").onclick = function() {
-    toggleMaximized();
+    win.isMaximized() ? win.unmaximize() : win.maximize();
   }
 
+  document.getElementById("dev").onclick = function() {
+    win.toggleDevTools();
+  }
   document.getElementById("min").onclick = function() {
-    minimize();
+    win.minimize();
   }
   document.getElementById("max").onclick = function() {
-    toggleMaximized();
+    win.isMaximized() ? win.unmaximize() : win.maximize();
   }
   document.getElementById("exit").onclick = function() {
-    closeWindow();
+    win.close();
   }
 
-  updateContentStyle();
+  document.onreadystatechange = function () {
+    if (document.readyState == "complete") {
+      init();
+    }
+  };
 }
 
 
+/*
+var archive = require('./lib/archive-zip');
+var tar = require('./lib/tar-fs');
+var fs = require('fs');
+*/
 
-var keyPressed = {};
 
-document.addEventListener('keydown', function(e) {
-  keyPressed[e.keyCode] = true;
-}, false);
-document.addEventListener('keyup', function(e) {
-  keyPressed[e.keyCode] = false;
-}, false);
-
-function gameLoop() {
-  if (keyPressed["a"]) {
-    toggleMaximized();
-  }
-  // etc
-  // update display here
-  setTimeout(gameLoop, 10);
-}
-
-gameLoop();
+var key = require('./lib/keymaster');
+key("a+s", function(){
+        win.toggleDevTools();
+});

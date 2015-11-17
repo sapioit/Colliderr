@@ -3,9 +3,9 @@
 # Planned / Unsolved (Yet)
 
 <br/>- I need only the "tag_name" from the JSON array... and find a way to parse JSON in JS
-<br/>- I'm thinking of using electron itself, for deploying the app on the 3 supported platforms... 
+<br/>- I'm thinking of using electron itself, for deploying the app on the 3 supported platforms...
 <br/>- the tags Electron supports, in package.json...
-<br/>- The interface is pretty easy, since there are tutorials... 
+<br/>- The interface is pretty easy, since there are tutorials...
 
 # Solved
 ___
@@ -55,42 +55,44 @@ Include `keymaster.js` in your web app*, by loading it as usual:
 [<b>Usage</b>](lib/keymaster.markdown)
 
 ___
-###### <s>key(s) pressed</s>
+###### <s>key(s) pressed
 
 1.  Include mousetrap on your page before the closing ``</body>`` tag
 
-    ```html
-    <script src="/path/to/mousetrap.min.js"></script>
-    ```
+```html
+<script src="/path/to/mousetrap.min.js"></script>
+```
 
 2.  Add some keyboard events to listen for
 
-    ```html
-    <script>
-        // single keys
-        Mousetrap.bind('4', function() { console.log('4'); });
-        Mousetrap.bind("?", function() { console.log('show shortcuts!'); });
-        Mousetrap.bind('esc', function() { console.log('escape'); }, 'keyup');
+```html
+<script>
+// single keys
+Mousetrap.bind('4', function() { console.log('4'); });
+Mousetrap.bind("?", function() { console.log('show shortcuts!'); });
+Mousetrap.bind('esc', function() { console.log('escape'); }, 'keyup');
 
-        // combinations
-        Mousetrap.bind('command+shift+k', function() { console.log('command shift k'); });
+// combinations
+Mousetrap.bind('command+shift+k', function() { console.log('command shift k'); });
 
-        // map multiple combinations to the same callback
-        Mousetrap.bind(['command+k', 'ctrl+k'], function() {
-            console.log('command k or control k');
+// map multiple combinations to the same callback
+Mousetrap.bind(['command+k', 'ctrl+k'], function() {
+console.log('command k or control k');
 
-            // return false to prevent default browser behavior
-            // and stop event from bubbling
-            return false;
-        });
+// return false to prevent default browser behavior
+// and stop event from bubbling
+return false;
+});
 
-        // gmail style sequences
-        Mousetrap.bind('g i', function() { console.log('go to inbox'); });
-        Mousetrap.bind('* a', function() { console.log('select all'); });
+// gmail style sequences
+Mousetrap.bind('g i', function() { console.log('go to inbox'); });
+Mousetrap.bind('* a', function() { console.log('select all'); });
 
-        // konami code!
-        Mousetrap.bind('up up down down left right left right b a enter', function() {
-            console.log('konami code');
-        });
-    </script>
-    ```
+// konami code!
+Mousetrap.bind('up up down down left right left right b a enter', function() {
+console.log('konami code');
+});
+</script>
+```
+</s>
+
