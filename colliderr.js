@@ -1,8 +1,18 @@
 var remote = require('remote');
 var BrowserWindow = remote.require('browser-window');
 var win = BrowserWindow.getFocusedWindow();
+<<<<<<< HEAD
 
 
+=======
+
+
+
+<<<<<<< HEAD
+
+=======
+>>>>>>> 9c1318a2cebde55b68c8b869a09ba93906551fbf
+>>>>>>> e18813564642a0af4a1c3699c36a289b9842250f
 window.onload = function() {
 
   document.getElementById("close-window-button").onclick = function() {
@@ -36,6 +46,7 @@ window.onload = function() {
   document.getElementById("exit").onclick = function() {
     win.close();
   }
+<<<<<<< HEAD
 
   document.onreadystatechange = function () {
     if (document.readyState == "complete") {
@@ -56,3 +67,9 @@ var key = require('./lib/keymaster');
 key("a+s", function(){
         win.toggleDevTools();
 });
+<<<<<<< HEAD
+=======
+=======
+}
+>>>>>>> 9c1318a2cebde55b68c8b869a09ba93906551fbf
+>>>>>>> e18813564642a0af4a1c3699c36a289b9842250f

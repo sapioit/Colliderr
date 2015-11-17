@@ -2,7 +2,10 @@
 A GUI app packager for [Electron](https://github.com/atom/electron). Written in [Electron](https://github.com/atom/electron).
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> e18813564642a0af4a1c3699c36a289b9842250f
 ## Versioning
 
 For transparency and insight into our release cycle, and for striving to maintain backward compatibility, Butter will be maintained according to the [Semantic Versioning](http://semver.org/) guidelines as much as possible.

@@ -6,7 +6,10 @@
 <br/>- I'm thinking of using electron itself, for deploying the app on the 3 supported platforms...
 <br/>- the tags Electron supports, in package.json...
 <br/>- The interface is pretty easy, since there are tutorials...
+<<<<<<< HEAD
 
+=======
+>>>>>>> e18813564642a0af4a1c3699c36a289b9842250f
 
 # Solved
 ___
@@ -66,6 +69,10 @@ ___
 
 2.  Add some keyboard events to listen for
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> e18813564642a0af4a1c3699c36a289b9842250f
 ```html
 <script>
 // single keys
@@ -95,5 +102,39 @@ console.log('konami code');
 });
 </script>
 ```
+<<<<<<< HEAD
+=======
+=======
+    ```html
+    <script>
+        // single keys
+        Mousetrap.bind('4', function() { console.log('4'); });
+        Mousetrap.bind("?", function() { console.log('show shortcuts!'); });
+        Mousetrap.bind('esc', function() { console.log('escape'); }, 'keyup');
+
+        // combinations
+        Mousetrap.bind('command+shift+k', function() { console.log('command shift k'); });
+
+        // map multiple combinations to the same callback
+        Mousetrap.bind(['command+k', 'ctrl+k'], function() {
+            console.log('command k or control k');
+
+            // return false to prevent default browser behavior
+            // and stop event from bubbling
+            return false;
+        });
+
+        // gmail style sequences
+        Mousetrap.bind('g i', function() { console.log('go to inbox'); });
+        Mousetrap.bind('* a', function() { console.log('select all'); });
+
+        // konami code!
+        Mousetrap.bind('up up down down left right left right b a enter', function() {
+            console.log('konami code');
+        });
+    </script>
+    ```
+>>>>>>> 9c1318a2cebde55b68c8b869a09ba93906551fbf
+>>>>>>> e18813564642a0af4a1c3699c36a289b9842250f
 </s>
 
