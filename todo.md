@@ -52,7 +52,7 @@ Include `keymaster.js` in your web app*, by loading it as usual:
 <script src="keymaster.js"></script>
 ```
 
-[Usage](lib/keymaster.markdown)
+[<b>Usage</b>](lib/keymaster.markdown)
 
 ___
 ###### <s>key(s) pressed</s>
