@@ -42,3 +42,55 @@ var archive = require("../lib/archive-zip"); <br/>
 console.log(appPath + ".zip"); <br/>
 return archive(appPath, appPath + ".zip"); <br/>
 ```
+
+___
+###### Key(s) pressed
+
+Include `keymaster.js` in your web app*, by loading it as usual:
+
+```html
+<script src="keymaster.js"></script>
+```
+
+[Usage](lib/keymaster.markdown)
+
+___
+###### <s>key(s) pressed</s>
+
+1.  Include mousetrap on your page before the closing ``</body>`` tag
+
+    ```html
+    <script src="/path/to/mousetrap.min.js"></script>
+    ```
+
+2.  Add some keyboard events to listen for
+
+    ```html
+    <script>
+        // single keys
+        Mousetrap.bind('4', function() { console.log('4'); });
+        Mousetrap.bind("?", function() { console.log('show shortcuts!'); });
+        Mousetrap.bind('esc', function() { console.log('escape'); }, 'keyup');
+
+        // combinations
+        Mousetrap.bind('command+shift+k', function() { console.log('command shift k'); });
+
+        // map multiple combinations to the same callback
+        Mousetrap.bind(['command+k', 'ctrl+k'], function() {
+            console.log('command k or control k');
+
+            // return false to prevent default browser behavior
+            // and stop event from bubbling
+            return false;
+        });
+
+        // gmail style sequences
+        Mousetrap.bind('g i', function() { console.log('go to inbox'); });
+        Mousetrap.bind('* a', function() { console.log('select all'); });
+
+        // konami code!
+        Mousetrap.bind('up up down down left right left right b a enter', function() {
+            console.log('konami code');
+        });
+    </script>
+    ```
