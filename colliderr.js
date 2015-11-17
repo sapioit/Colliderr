@@ -13,19 +13,6 @@ window.onresize = function() {
 }
 
 
-function toggleFullScreen(){
-  win.setFullScreen(!(win.isFullScreen()));
-}
-function toggleMaximized(){
-  win.isMaximized() ? win.unmaximize() : win.maximize();
-}
-function closeWindow() {
-  win.close();
-}
-function minimize(){
-  win.minimize();
-}
-
 window.onload = function() {
 
 
@@ -34,7 +21,7 @@ window.onload = function() {
   var win = BrowserWindow.getFocusedWindow();
 
   document.getElementById("close-window-button").onclick = function() {
-    closeWindow();
+    win.close();
   }
   document.getElementById("minimize-window-button").onclick = function() {
     win.minimize();
@@ -46,43 +33,19 @@ window.onload = function() {
     win.unmaximize();
   }
   document.getElementById("toggle-window-button").onclick = function() {
-    toggleFullScreen();
+    win.setFullScreen(!(win.isFullScreen()));
   }
   document.getElementById("maxmin-window-button").onclick = function() {
-    toggleMaximized();
+    win.isMaximized() ? win.unmaximize() : win.maximize();
   }
 
   document.getElementById("min").onclick = function() {
-    minimize();
+    win.minimize();
   }
   document.getElementById("max").onclick = function() {
-    toggleMaximized();
+    win.isMaximized() ? win.unmaximize() : win.maximize();
   }
   document.getElementById("exit").onclick = function() {
-    closeWindow();
+    win.close();
   }
-
-  updateContentStyle();
 }
-
-
-
-var keyPressed = {};
-
-document.addEventListener('keydown', function(e) {
-  keyPressed[e.keyCode] = true;
-}, false);
-document.addEventListener('keyup', function(e) {
-  keyPressed[e.keyCode] = false;
-}, false);
-
-function gameLoop() {
-  if (keyPressed["a"]) {
-    toggleMaximized();
-  }
-  // etc
-  // update display here
-  setTimeout(gameLoop, 10);
-}
-
-gameLoop();
