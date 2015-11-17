@@ -55,7 +55,7 @@ Include `keymaster.js` in your web app*, by loading it as usual:
 [<b>Usage</b>](lib/keymaster.markdown)
 
 ___
-###### <s>key(s) pressed</s>
+###### <s>key(s) pressed
 
 1.  Include mousetrap on your page before the closing ``</body>`` tag
 
@@ -94,3 +94,5 @@ ___
         });
     </script>
     ```
+</s>
+
