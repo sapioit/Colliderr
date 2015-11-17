@@ -52,6 +52,11 @@ var fs = require('fs');
 
 
 var key = require('./lib/keymaster');
-key("a+s", function(){
+key("F2", function(){
         win.toggleDevTools();
 });
+
+
+
+
+
