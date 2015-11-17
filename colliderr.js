@@ -4,7 +4,10 @@ var win = BrowserWindow.getFocusedWindow();
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9c1318a2cebde55b68c8b869a09ba93906551fbf
 window.onload = function() {
 
   document.getElementById("close-window-button").onclick = function() {
@@ -38,6 +41,7 @@ window.onload = function() {
   document.getElementById("exit").onclick = function() {
     win.close();
   }
+<<<<<<< HEAD
 
   document.onreadystatechange = function () {
     if (document.readyState == "complete") {
@@ -58,3 +62,6 @@ var key = require('./lib/keymaster');
 key("a+s", function(){
         win.toggleDevTools();
 });
+=======
+}
+>>>>>>> 9c1318a2cebde55b68c8b869a09ba93906551fbf
