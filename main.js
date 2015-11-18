@@ -27,10 +27,12 @@ app.on('ready', function() {
   mainWindow.toggleDevTools();
 
 
-  // We delay showing the window for 2 seconds
-  setTimeout(function () {
-    mainWindow.show();
-  }, 2000);
+  // We delay showing the window untill it finished loading, so we don't have problems with the background...
+  mainWindow.webContents.on('did-finish-load', function() {
+    setTimeout(function(){
+      mainWindow.show();
+    }, 40);
+  });
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function() {
