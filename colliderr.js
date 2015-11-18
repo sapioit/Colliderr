@@ -1,6 +1,7 @@
 var remote = require('remote');
 var BrowserWindow = remote.require('browser-window');
-var win = BrowserWindow.getFocusedWindow();
+/*var win = BrowserWindow.getFocusedWindow();*/
+var win = BrowserWindow.getAllWindows()[0];
 
 window.onload = function() {
 
@@ -52,7 +53,7 @@ var fs = require('fs');
 
 
 var key = require('./lib/keymaster');
-key("F2", function(){
+key("f2", function(){
         win.toggleDevTools();
 });
 
