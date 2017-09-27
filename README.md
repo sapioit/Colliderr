@@ -1,4 +1,4 @@
-# Colliderr
+# Colliderr [![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 A GUI app packager for [Electron](https://github.com/atom/electron). Written in [Electron](https://github.com/atom/electron).
 
 
